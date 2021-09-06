@@ -1,0 +1,34 @@
+version: '2'
+services:
+  nodo1:
+    build: .
+    command: python /code/manage.py migrate --noinput
+    command: python /code/manage.py runserver 0.0.0.0:80
+    volumes:
+        - .:/code
+    ports:
+        - "3000:80"
+  nodo2:
+    build: .
+    command: python /code/manage.py migrate --noinput
+    command: python /code/manage.py runserver 0.0.0.0:80
+    volumes:
+        - .:/code
+    ports:
+        - "4000:80"
+  nodo3:
+    build: .
+    command: python /code/manage.py migrate --noinput
+    command: python /code/manage.py runserver 0.0.0.0:80
+    volumes:
+        - .:/code
+    ports:
+        - "5000:80"
+  nodo4:
+    build: .
+    command: python /code/manage.py migrate --noinput
+    command: python /code/manage.py runserver 0.0.0.0:80
+    volumes:
+        - .:/code
+    ports:
+        - "6000:80"
